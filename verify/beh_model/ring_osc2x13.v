@@ -37,12 +37,11 @@
 // min rate = 1/(4 * (delay0 + delay1 * 26))
 
 module ring_osc2x13 #(parameter delay0=2.206, delay1=0.107) (
-    input reset,
-    input [25:0] trim,
-    output[1:0] clockp
+    input   wire        reset,
+    input   wire [25:0] trim,
+    output  reg  [1:0]  clockp
 );    
     
-    reg [1:0] clockp;
     reg hiclock;
     integer i;
     real delay;
