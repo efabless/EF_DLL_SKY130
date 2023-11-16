@@ -23,6 +23,10 @@
 `endif // ! COCOTB_SIM
 
 module digital_locked_loop (
+    `ifdef USE_POWER_PINS
+        inout VGND,
+        inout VPWR,
+    `endif
     input           resetb,	    // Sense negative reset
     input           enable,	    // Enable DLL
     input           osc,		// Input oscillator to match
